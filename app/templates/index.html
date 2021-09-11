@@ -11,10 +11,7 @@
     {% endif %}
 </head>
 <body>
-    {% block styles%}
-    {{ super() }}
-    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
-    {% endblock %}
+   
     <div class="container">
         <h1 style="color:#2196F3;text-decoration-line:underline;text-align:center " id="top">WORLD SOURCES</h1>
 
@@ -44,6 +41,6 @@
         {% endfor %}
         </div>
     </div>
-    {% endblock %}
+   
 </body>
 </html>

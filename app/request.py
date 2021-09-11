@@ -1,6 +1,7 @@
 import urllib.request,json
 from .models import Articles,Sources
 
+
 sources_url = None
 articles_url = None
 
@@ -10,11 +11,11 @@ def configure_request(app):
     sources_url = app.config['SOURCES_URL']
     articles_url = app.config['ARTICLES_URL']
 
-def get_sources(category):
+def get_sources(sources):
     '''
     Function that gets the json response to our url request
     '''
-    get_sources_url = sources_url.format(category,api_key)
+    get_sources_url = 'https://newsapi.org/v2/sources?category={}&language=en&apiKey=4232538dea47480c930c501d928386b4'.format(sources)
     with urllib.request.urlopen(get_sources_url) as url:
         sources_data = url.read()
         sources_response = json.loads(sources_data)
@@ -51,12 +52,12 @@ def process_sources(sources_list):
     return sources_results
 
 
-def get_articles(id):
+def get_articles(articles):
     '''
     function to get json response
     '''
     
-    get_articles_url = articles_url.format(id,api_key)
+    get_articles_url = 'https://newsapi.org/v2/everything?q=Apple&from=2021-09-11&sortBy=popularity&apiKey=4232538dea47480c930c501d928386b4'.format(articles)
     
     with urllib.request.urlopen(get_articles_url) as url:
         
