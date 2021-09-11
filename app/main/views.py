@@ -1,3 +1,16 @@
-from flask import Blueprint
-main = Blueprint('main', __name__)
-from .import views,errors
+from flask import render_template
+from .import main
+
+@main.route('/')
+def index():
+
+    '''
+    View root page function that returns the index page and its data
+    '''
+    
+    
+    title = 'Welcome to NewsWeb App'
+   
+    
+    
+    return render_template('index.html',title = title)
