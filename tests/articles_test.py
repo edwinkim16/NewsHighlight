@@ -10,7 +10,7 @@ class ArticlesTest(unittest.TestCase):
         '''
         setUp method that will run before every test
         '''
-        self.new_article = Articles("abc-news","Abc","associated","a 5o year old","https:\/\/abcnews.go.com\/US\/wireStory\/louisiana-man-charged-100-counts-degree-rape-62425650","https:\/\/s.abcnews.com\/images\/US\/mississippi-storm-damage-ap-mo-20190414_hpMain_16x9_992.jpg","2019-04-16T09:36:47Z","The number of tornadoes confirmed over the weekend ha")
+        self.new_article = Articles("techcrunch","TechCrunch","Connie Loizos","Tesla should say something","http://techcrunch.com/2021/09/10/tesla-should-say-something/","http://techcrunch.com/2021/09/10/tesla-should-say-something/","2021-09-11T05:37:56Z","Last weekend, a reader wrote to this editor, politely asking")
         
     def test_instance(self):
         self.assertTrue(isinstance(self.new_article,Articles))
